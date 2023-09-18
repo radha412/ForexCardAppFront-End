@@ -1,0 +1,53 @@
+<div>
+  <app-nav-user></app-nav-user>
+</div>
+<div class="container">
+    <div class="tab-content">
+        <div>
+          <!-- Buy Form -->
+          <div class="input-group">
+              <label for="currency">Select City:</label>
+              <select id="currency">
+                <option value="USD">Ajmer</option>
+                <option value="EUR">Delhi</option>
+                <!-- Add more currency options -->
+              </select>
+            </div>
+          <div class="input-group">
+            <label for="currency">Select Currency:</label>
+            <select id="currency" [(ngModel)]="selectedCurrency">
+              <option value="USD">USD</option>
+              <option value="EUR">EUR</option>
+              <!-- Add more currency options -->
+            </select>
+          </div>
+          <!-- <div class="exchange-rate">
+              <p>Rate: {{ exchangeRate }}</p>
+            </div> -->
+            <div class="input-group">
+                <label for="currency">Select Card:</label>
+                <select id="currency">
+                    <option value="HDFC">Gold</option>
+                  <option value="HDFC">HDFC Regalia</option>
+                  <option value="AXIS">Axis Bank</option>
+                  <option value="AXIS">ICICI FOREX CARD</option>
+                  <!-- Add more currency options -->
+                </select>
+              </div>
+     
+         <!-- <div class="in-row">
+          <div class="input-group" style="margin-right:20px">
+              <label for="amount">Enter Forex Type:</label>
+              <input id="amount" type="number" [(ngModel)]="amount" />
+            </div> -->
+            <!-- <div class="input-group">
+                <label for="amount">Enter INR Amount:</label>
+                <input id="amount" type="number" [(ngModel)]="amount" />
+              </div> -->
+         </div>
+     
+          <span></span>
+     
+          <button class="buy-button" (click)="buy()">Buy</button>
+        </div>
+        </div>

@@ -1,0 +1,36 @@
+.form-label{    
+    font-weight: bold;
+    text-align: center;
+    color: black;
+    margin: 5px;
+    font-size: medium;
+}
+
+
+
+h1{
+    font-size: xx-large;
+    text-align: center;
+    color: rgb(19, 19, 18);
+    margin-bottom: 30px;
+    margin-top: 30px;
+    margin-left: 50px;
+}
+
+/* .form-text{
+    font-weight: 200;
+} */
+
+
+.form-control{
+    margin: 5px;
+    
+}
+
+.addforex{
+    width: 50%;
+    align-items: center;
+    text-align: center;
+    margin-left: 360px;
+}
+

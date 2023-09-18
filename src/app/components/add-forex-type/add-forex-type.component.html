@@ -1,0 +1,110 @@
+<div>
+  <!-- <app-payment-component></app-payment-component> -->
+  <app-nav-admin></app-nav-admin>
+</div>
+<h1>Add Forex Card Type</h1>
+<form (ngSubmit)='addForexType()'>
+<div class="addforex">
+  <div class="mb-4">
+    <label for="forexCardName" class="form-label">Forex Card Name</label>
+    <input
+    #name="ngModel" required minlength="2" maxlength="20"
+      type="text"
+      class="form-control"
+      id="forexCardName"
+      name="forexCardName"
+      [(ngModel)]="forexCardType.forexCardName"
+      aria-describedby="Name"
+    />
+    <div *ngIf="name.touched && name.invalid" class="alert alert-danger">Forex Card is required.
+
+      <!-- <p *ngIf="name.errors.required">Name is required</p> -->
+
+    </div>
+  </div>
+  <div class="mb-4">
+    <label for="forexCardConversionFee" class="form-label">Conversion Fees</label>
+    <input
+    #name="ngModel" required minlength="2" maxlength="20"
+      type="text"
+      class="form-control"
+      id="forexCardConversionFee"
+      name="forexCardConversionFee"
+      [(ngModel)]="forexCardType.forexCardConversionFee"
+      aria-describedby="conversion fees"
+    />
+    <div *ngIf="name.touched && name.invalid" class="alert alert-danger">Conversion Fee is required.
+
+      <!-- <p *ngIf="name.errors.required">Name is required</p> -->
+
+    </div>
+  </div>
+  <div class="mb-4">
+    <label for="maxSpendingLimit" class="form-label">Spending Limit</label>
+    <input
+    #name="ngModel" required minlength="2" maxlength="20"
+      type="text"
+      class="form-control"
+      id="maxSpendingLimit"
+      name="maxSpendingLimit"
+      [(ngModel)]="forexCardType.maxSpendingLimit"
+    />
+    <div *ngIf="name.touched && name.invalid" class="alert alert-danger">Spending Limit is required.
+
+      <!-- <p *ngIf="name.errors.required">Name is required</p> -->
+
+    </div>
+  </div>
+  <div class="mb-4">
+    <label for="platformfee" class="form-label">Platform Fees</label>
+    <input
+    #name="ngModel" required minlength="2" maxlength="20"
+      type="text"
+      class="form-control"
+      id="platformfee"
+      name="platformfee"
+      [(ngModel)]="forexCardType.platformfee"
+    />
+    <div *ngIf="name.touched && name.invalid" class="alert alert-danger">Platform is required.
+
+      <!-- <p *ngIf="name.errors.required">Name is required</p> -->
+
+    </div>
+  </div>
+  <div class="mb-4">
+    <label for="subscriptionFees" class="form-label">Subscription Fees</label>
+    <input
+    #name="ngModel" required minlength="2" maxlength="20"
+      type="text"
+      class="form-control"
+      id="subscriptionFees"
+      name="subscriptionFees"
+      [(ngModel)]="forexCardType.subscriptionFees"
+    />
+    <div *ngIf="name.touched && name.invalid" class="alert alert-danger">Subscription is required.
+
+      <!-- <p *ngIf="name.errors.required">Name is required</p> -->
+
+    </div>
+  </div>
+  <div class="mb-4">
+    <label for="baseIncome" class="form-label">Base Income</label>
+    <input
+    #name="ngModel" required minlength="2" maxlength="20"
+      type="text"
+      class="form-control"
+      id="baseIncome"
+      name="baseIncome"
+      [(ngModel)]="forexCardType.baseIncome"
+    />
+    <div *ngIf="name.touched && name.invalid" class="alert alert-danger">Base Income is required.
+
+      <!-- <p *ngIf="name.errors.required">Name is required</p> -->
+
+    </div>
+  </div>
+  <div class="mb-4" >
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</div>
+</form>

@@ -1,0 +1,95 @@
+<form (ngSubmit)="makeComplaint()">
+  <div class="customercontactform">
+    <h1>Customer Contact</h1>
+
+    <div class="mb-3">
+      <label for="customerName" class="form-label">Name</label>
+
+      <input
+        #name="ngModel"
+        required
+        type="text"
+        type="text"
+        class="form-control"
+        id="customerName"
+        name="customerName"
+        [(ngModel)]="complaints.customerName"
+      />
+
+      <div *ngIf="name.touched && name.invalid" class="alert alert-danger">
+        Name is required.
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="phoneNumber" class="form-label">Phone Number</label>
+
+      <input
+        #name="ngModel"
+        required
+        minlength="13"
+        maxlength="13"
+        type="string"
+        class="form-control"
+        id="phoneNumber"
+        name="phoneNumber"
+        [(ngModel)]="complaints.phoneNumber"
+      />
+
+      <div *ngIf="name.touched && name.invalid" class="alert alert-danger">
+        Phone Number is required.
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="description" class="form-label">Subject</label>
+
+      <select id="description" name="Subject" class="form-control">
+        <option value="1">Select</option>
+
+        <option value="2">Complaint</option>
+
+        <option value="3">Enquiry</option>
+
+        <input
+          #name="ngModel"
+          required
+          type="text"
+          type="text"
+          class="form-control"
+          id="description"
+          name="description"
+          [(ngModel)]="complaints.description"
+        />
+
+        <div *ngIf="name.touched && name.invalid" class="alert alert-danger">
+          Subject is required.
+        </div>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="msgDescription" class="form-label">Description</label>
+
+      <input
+        #name="ngModel"
+        required
+        minlength="2"
+        maxlength="50"
+        type="text"
+        class="form-control"
+        id="msgDescription"
+        name="msgDescription"
+        [(ngModel)]="complaints.msgDescription"
+      />
+
+      <div *ngIf="name.touched && name.invalid" class="alert alert-danger">
+        Description is required.
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+</form>

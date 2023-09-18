@@ -1,0 +1,55 @@
+<div class="container">
+<form (ngSubmit)="showCurrentBalance(selfId, pin)">
+  <div></div>
+
+  <div class="showCurrentBalanceform">
+    <div class="mb-5">
+      <label for="selfId" class="form-label">Forex Card Number</label>
+
+      <input
+        #name="ngModel"
+        required
+        minlength="16"
+        maxlength="16"
+        type="number"
+        class="form-control"
+        id="selfId"
+        name="selfId"
+        [(ngModel)]="selfId"
+      />
+
+      <div *ngIf="name.touched && name.invalid" class="alert alert-danger">
+        Forex Card Number is required.
+      </div>
+    </div>
+
+    <div class="mb-5">
+      <label for="pin" class="form-label">Pin</label>
+
+      <input
+        #name="ngModel"
+        required
+        type="password"
+        type="text"
+        type="password"
+        class="form-control"
+        id="pin"
+        name="pin"
+        [(ngModel)]="pin"
+      />
+
+      <div *ngIf="name.touched && name.invalid" class="alert alert-danger">
+        Pin is required.
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+
+    <div>
+      <h3>Current Balance : {{ current_balance }}</h3>
+    </div>
+  </div>
+</form>
+</div>

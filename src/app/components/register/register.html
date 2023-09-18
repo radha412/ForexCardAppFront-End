@@ -1,0 +1,40 @@
+
+
+<form [formGroup]="registrationForm" (ngSubmit)="sendOTP()">
+    <input type="text" name="useremail" placeholder="Email or Phone Number" formControlName="useremail">
+    <div *ngIf="registrationFormControls['useremail'].invalid && 
+        (registrationFormControls['useremail'].dirty || registrationFormControls['useremail'].touched)"
+      class="alert alert-danger">
+      <div *ngIf="registrationFormControls['useremail'].errors?.['required']">
+        Email is required.
+      </div>
+    </div>
+    <button type="submit">send Otp</button>
+  </form>
+ 
+
+  <form [formGroup]="otpVerificationForm" (ngSubmit)="verifyOTP()" class="box">
+    <div *ngIf='!isOTPSent'>
+      <input type="text" name="clientOTP" placeholder="Email Your OTP" formControlName='otp'>
+      <div *ngIf="otpVerificationFormControl['otp'].invalid && 
+        (otpVerificationFormControl['otp'].dirty || otpVerificationFormControl['otp'].touched)" class="alert alert-danger">
+        <div *ngIf="otpVerificationFormControl['otp'].errors?.['required']">
+          Otp is Required
+        </div>
+
+        <div *ngIf="otpVerificationFormControl['otp'].errors?.['minlength']">
+          Otp should be 6 digit long
+        </div>
+      </div>
+      <input type="submit" [disabled]="!registrationForm.valid" value="Verify OTP">
+    </div>
+  </form>
+
+
+<form [formGroup]="setPasswordForm" (ngSubmit)="setPassword()">
+<div *ngIf='isOTPVerified'>
+  <label for="password">Enter Your password</label>
+  <input type="password" name="password" formControlName="password">
+  <input type="submit" [disabled]="!registrationForm.valid" value="Sign Up">
+</div>
+</form>

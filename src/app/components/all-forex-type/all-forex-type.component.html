@@ -1,0 +1,47 @@
+<div>
+  <!-- <app-payment-component></app-payment-component> -->
+  <app-nav-admin></app-nav-admin>
+</div>
+<div >
+    <div class="container text-center">
+        <h1>All Forex Card Type Details</h1>
+      </div>
+    
+    
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>ForexCard Id</th>
+            <th>ForexCard  Name</th>
+            <th>ForexCard ConversionFees</th>
+            <th colspan="2">ForexCard Max Spending Limit</th>
+            <th>ForexCard Platformfee</th>
+            <th>ForexCard SubscriptionFees</th>
+            <th>ForexCard BaseIncome</th>
+            <th >Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let forexcardType of forexCardTypes">
+            <td>{{forexcardType.forexCardNameId}}</td>
+            <td>{{forexcardType.forexCardName}}</td>
+            <td>{{forexcardType.forexCardConversionFee}}</td>
+            <td colspan="2">{{forexcardType.maxSpendingLimit}}</td>
+            <td>{{forexcardType.platformfee}}</td>
+            <td>{{forexcardType.subscriptionFees}}</td>
+            <td>{{forexcardType.baseIncome}}</td>
+            <td>
+              <button (click)="updateForexType(forexcardType.forexCardNameId)" 
+              type="button" class="btn btn-outline-info">Update</button></td>
+            <td>
+              <!-- <button (click)="deleteForexType(forexcardType.forexCardNameId)"
+              type="button" class="btn btn-outline-danger">Delete</button></td> -->
+          </tr>
+          
+        </tbody>
+      </table>
+      </div>
+    
+    
+    
+    

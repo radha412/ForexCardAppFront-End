@@ -1,0 +1,41 @@
+.form-label{    
+    font-weight: bold;
+    text-align: center;
+    color: black;
+    margin: 5px;
+    font-size: medium;
+    align-items: center;
+}
+.form-control{
+    width: 50%;
+    display: grid;
+
+justify-content: center;
+
+}
+
+
+h1{
+    font-size: xx-large;
+    text-align: center;
+    color: chocolate;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+/* .form-text{
+    font-weight: 200;
+} */
+
+
+.form-control{
+    margin: 5px;
+    margin-left: 330px;
+}
+
+.forexcardtypeform{
+    align-items: center;
+    text-align: center;
+   margin-top: 30px;
+   margin-bottom: 30px;
+}

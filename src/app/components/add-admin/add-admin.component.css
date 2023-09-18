@@ -1,0 +1,27 @@
+.adminform{
+    margin: 20px;
+    margin-left: 350px;
+    align-items: center;
+    max-width: 50%;
+    align-self: center;
+}
+
+.formlabel{
+    width: 50px;
+    font-weight: bold;
+}
+
+h1{
+    margin-left: 250px;
+    color: rgb(33, 31, 30);
+    margin-bottom: 50px;
+}
+
+.form-text{
+    font-weight: 200;
+}
+
+.form-check-input{
+    font-weight: bold;
+}
+

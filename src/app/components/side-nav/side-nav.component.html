@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Admin Dashboard</title>
+
+  </head>
+  <body>
+    <div class="grid-container">
+      <!-- Sidebar -->
+      <aside id="sidebar">
+        <div class="sidebar-title">
+          <div class="sidebar-brand">
+          </div>
+          <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+        </div>
+ 
+        <ul class="sidebar-list">
+          <li class="sidebar-list-item">
+            <a href="#" target="_blank">
+              <span class="material-icons-outlined">dashboard</span> Dashboard
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="/checkbalance" target="_blank">
+              <span></span> Check Balance
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="#" target="_blank">
+              <span></span> Update Pin
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="#" target="_blank">
+              <span></span> Forget Pin
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="#" target="_blank">
+              <span></span> View transactions
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="#" target="_blank">
+              <span></span> Frequently Asked Questions
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="#" target="_blank">
+            </a>
+          </li>
+        </ul>
+      </aside>
+      <!-- End Sidebar -->
+ 
+      <!-- Main -->
+
+      <main class="main-container">
+        <div class="main-title">
+        </div>
+ 
+        <div>
+          <div>
+              <div class="credit-card">
+                <div class="credit-card__front">
+                    <div style="text-align:center">Forex Card</div>
+                    <div class="credit-card__number" contenteditable="true">Forex Card Number</div>
+                    <div class="credit-card__info">
+                        <div class="credit-card__holder" contenteditable="true">Sakshi Doe</div>
+                        <div class="credit-card__expiry" contenteditable="true">12/25</div>
+                    </div>
+                </div>
+                <div class="credit-card__back">
+                    <div class="credit-card__stripe"></div>
+                    <div class="credit-card__signature" contenteditable="true">CVV</div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+        </div>
+       
+ 
+        </div>
+      </main>
+      <!-- End Main -->
+ 
+    </div>
+    <!-- Custom JS -->
+    <script>
+    var sidebarOpen = false;
+var sidebar = document.getElementById("sidebar");
+ 
+function openSidebar() {
+  if(!sidebarOpen) {
+    sidebar.classList.add("sidebar-responsive");
+    sidebarOpen = true;
+  }
+}
+ 
+function closeSidebar() {
+  if(sidebarOpen) {
+    sidebar.classList.remove("sidebar-responsive");
+    sidebarOpen = false;
+  }
+}
+    </script>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+<form (ngSubmit)="updateForexType()">
+    <div class="forexcardtypeform">
+      <h1>Update Forex Card Type</h1>
+      <div class="mb-3">
+        <label for="forexcardname" class="form-label">Forex Card Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="forexCardName"
+          name="forexCardName"
+          [(ngModel)]="forexCardType.forexCardName"
+          aria-describedby="Name"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="conversionfee" class="form-label">Conversion Fees</label>
+        <input
+          type="text"
+          class="form-control"
+          id="forexCardConversionFee"
+          name="forexCardConversionFee"
+          [(ngModel)]="forexCardType.forexCardConversionFee"
+          aria-describedby="conversion fees"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="spendinglimit" class="form-label">Spending Limit</label>
+        <input type="text" 
+        class="form-control" 
+        id="maxSpendingLimit" 
+        name="maxSpendingLimit"
+        [(ngModel)]="forexCardType.maxSpendingLimit"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="platformfee" class="form-label">Platform Fees</label>
+        <input type="text" 
+        class="form-control" 
+        id="platformfee"
+        name="platformfee"
+        [(ngModel)]="forexCardType.platformfee"
+         />
+      </div>
+      <div class="mb-3">
+        <label for="subscriptionfees" class="form-label">Subscription Fees</label>
+        <input type="text" 
+        class="form-control" 
+        id="subscriptionFees" 
+        name="subscriptionFees"
+        [(ngModel)]="forexCardType.subscriptionFees"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="baseincome" class="form-label">Base Income</label>
+        <input type="text" 
+        class="form-control" 
+        id="baseIncome" 
+        name="baseIncome"
+        [(ngModel)]="forexCardType.baseIncome"
+        />
+      </div>
+      <div class="btn1">
+        <button type="submit" class="btn btn-primary">Update</button>
+      </div>
+    </div>
+  </form>
+  
+  
+  

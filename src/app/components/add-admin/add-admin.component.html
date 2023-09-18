@@ -1,0 +1,56 @@
+<div>
+  <!-- <app-payment-component></app-payment-component> -->
+  <app-nav-admin></app-nav-admin>
+</div>
+<form (ngSubmit)="AddAdmin(selfId)">
+    <div class="adminform">
+      <h1>Add new Admin</h1>
+      <div class="mb-5">
+        <label for="adminId" class="form-label">Admin Id For Adding New Admin</label>
+        <input 
+        #name="ngModel" required minlength="2" maxlength="20"
+        type="email" class="form-control" id="selfId" name="selfId" 
+        [(ngModel)]="selfId" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">Share your own AdminId for adding new Admin</div>
+      </div>
+      <!-- <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">New Admin Id</label>
+        <input type="email" class="form-control" id="adminId" name="adminId"
+        [(ngModel)]="admin.adminId" aria-describedby="emailHelp">
+      </div> -->
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input 
+      #name="ngModel" required minlength="2" maxlength="20"
+      type="email" class="form-control" id="adminEmail" name="adminEmail"
+      [(ngModel)]="admin.adminEmail" aria-describedby="emailHelp">
+      <div *ngIf="name.touched && name.invalid" class="alert alert-danger">Email address is required.
+
+        <!-- <p *ngIf="name.errors.required">Name is required</p> -->
+  
+      </div>
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="password" name="password"
+      [(ngModel)]="admin.password">
+      <div *ngIf="name.touched && name.invalid" class="alert alert-danger">Password is required.
+
+        <!-- <p *ngIf="name.errors.required">Name is required</p> -->
+  
+      </div>
+    </div>
+    <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" name="isAdmin" id="isAdmin" [(ngModel)]="admin.isAdmin">
+        <label class="form-check-label" for="flexCheckDefault">
+          Is SuperAdmin
+        </label>
+      </div>  
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div> 
+    
+</div>
+</form>
+

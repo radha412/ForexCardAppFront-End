@@ -1,0 +1,81 @@
+<form (ngSubmit)="makePayment(selfId, pin)">
+  <div class="forexpaymentform">
+    <h1>Make Payment</h1>
+
+    <div class="mb-5">
+      <label for="selfId" class="form-label">Forex Card Number</label>
+
+      <input
+        type="number"
+        class="form-control"
+        id="selfId"
+        name="selfId"
+        [(ngModel)]="selfId"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="merchant" class="form-label">Merchant</label>
+
+      <input
+        type="text"
+        class="form-control"
+        id="merchant"
+        name="merchant"
+        [(ngModel)]="forexPayment.merchant"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="amount" class="form-label">Amount</label>
+
+      <input
+        type="number"
+        class="form-control"
+        id="amount"
+        name="amount"
+        [(ngModel)]="forexPayment.amount"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="currency" class="form-label">Currency</label>
+
+      <input
+        type="text"
+        class="form-control"
+        id="currency"
+        name="currency"
+        [(ngModel)]="forexPayment.currency"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="paymentMethod" class="form-label">Payment Method</label>
+
+      <input
+        type="text"
+        class="form-control"
+        id="paymentMethod"
+        name="paymentMethod"
+        [(ngModel)]="forexPayment.paymentMethod"
+      />
+    </div>
+
+    <div class="mb-5">
+      <label for="pin" class="form-label">Pin</label>
+
+      <input
+        type="password"
+        class="form-control"
+        id="pin"
+        name="pin"
+        [(ngModel)]="pin"
+      />
+    </div>
+
+    <div class="mb-3">
+      <button type="submit" class="btn btn-primary">Pay</button>
+    </div>
+  </div>
+</form>

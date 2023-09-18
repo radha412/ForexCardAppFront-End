@@ -1,0 +1,225 @@
+<mat-stepper #stepper>
+  <mat-step [stepControl]="userNameForm" label="Personal Information">
+    <mat-card>
+      <mat-card-content>
+        <form [formGroup]="userNameForm" (ngSubmit)="verifyEmail()">
+          <div>
+            <mat-form-field class="wrapper">
+              <mat-label>Enter Your Name as Per Adhaar Card</mat-label>
+
+              <input
+                matInput
+                placeholder="Enter Your Name"
+                formControlName="name"
+                required
+              />
+            </mat-form-field>
+          </div>
+
+          <div>
+            <mat-form-field class="wrapper">
+              <mat-label>Enter Your Registered Email</mat-label>
+
+              <input
+                matInput
+                placeholder="Enter your mail"
+                formControlName="email"
+                required
+              />
+            </mat-form-field>
+          </div>
+
+          <!-- <div>
+
+                      <button mat-button>Verify Email</button>
+
+                  </div> -->
+
+          <!-- <div>
+
+                      <button mat-button matStepperPrevious>Back</button>
+
+                      <button mat-button matStepperNext>Next</button>
+
+                  </div> -->
+        </form>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-divider></mat-divider>
+
+    <div>
+      <button mat-raised-button matStepperNext>Next</button>
+    </div>
+  </mat-step>
+
+  <mat-step [stepControl]="sendOTPForm" label="Document Verifications">
+    <mat-card>
+      <mat-card-content>
+        <!-- form to send otp on the phone number and -->
+
+        <!-- <form [formGroup]="sendOTPForm" (ngSubmit)='sendOTP()'>
+
+                  <ng-template matStepLabel>Document Verifications</ng-template>
+
+                  <div>
+
+                      <mat-form-field class="wrapper">
+
+                          <mat-label>Phone Number</mat-label>
+
+                          <input matInput placeholder="Enter Phone Number" formControlName="phoneNumber" required>
+
+                      </mat-form-field>
+
+                  </div>
+
+                  <div>
+
+                      <button mat-button>Send OTP</button>
+
+                  </div>
+
+              </form> -->
+
+        <!-- form to verify the phone number-->
+
+        <!-- <div *ngIf='isOtpSent'>
+
+                  <form [formGroup]="verifyOTPForm" (ngSubmit)='verifyOTP()'>
+
+
+
+                      <mat-form-field class="wrapper">
+
+                          <mat-label>Enter Your OTP</mat-label>
+
+                          <input matInput placeholder="Enter your otp" formControlName="otp" required>
+
+                      </mat-form-field>
+
+                      <div>
+
+                          <button mat-button>Verify OTP</button>
+
+                      </div>
+
+                  </form>
+
+              </div> -->
+
+        <!-- form to  take the personal details from the user -->
+
+        <div>
+          <form [formGroup]="verifyAdhaarForm" (ngSubmit)="verifyAdhaar()">
+            <div>
+              <mat-form-field class="wrapper">
+                <mat-label>Adhaar Card</mat-label>
+
+                <input
+                  matInput
+                  formControlName="adhaarCard"
+                  placeholder="0000 1111 2222"
+                  required
+                />
+              </mat-form-field>
+            </div>
+
+            <div>
+              <button mat-button>Verify Adhaar Card</button>
+            </div>
+          </form>
+
+          <form [formGroup]="verifyPanCardForm" (ngSubmit)="verifyPanCard()">
+            <div *ngIf="isAdhaarVerified">
+              <div>
+                <mat-form-field class="wrapper">
+                  <mat-label>Pan Card</mat-label>
+
+                  <input
+                    type="text"
+                    digitOnly
+                    matInput
+                    formControlName="panCard"
+                    placeholder="adppj12345"
+                    required
+                  />
+                </mat-form-field>
+              </div>
+
+              <div>
+                <button mat-button>Verify PanCard</button>
+              </div>
+            </div>
+          </form>
+
+          <form [formGroup]="verifyPassportForm" (ngSubmit)="verifyPassport()">
+            <div *ngIf="isPancardVerified">
+              <div>
+                <mat-form-field class="wrapper">
+                  <mat-label>Passport</mat-label>
+
+                  <input
+                    matInput
+                    formControlName="passport"
+                    placeholder="adppj12345"
+                    required
+                  />
+                </mat-form-field>
+              </div>
+
+              <div>
+                <button mat-button>Verify Passport</button>
+              </div>
+            </div>
+
+            <!-- <div>
+
+          <button mat-raised-button matStepperNext>Next</button>
+
+      </div> -->
+          </form>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-divider></mat-divider>
+
+    <div>
+      <button mat-raised-button matStepperNext>Back</button>
+
+      <button mat-raised-button matStepperNext>Next</button>
+    </div>
+
+    <!-- Second Mat Step to verify documents -->
+  </mat-step>
+
+  <mat-step>
+    <mat-card>
+      <mat-card-content>
+        <ng-template matStepLabel>Submit Details</ng-template>
+
+        <p>You are now done.</p>
+
+        <form [formGroup] = "submitForm"  (ngSubmit)="submitDetails( )">
+          <h4>FOREX CARD TYPE DETAILS</h4>
+          <mat-form-field>
+            <mat-label>FOREX CARD TYPE</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let forexcardType of forexCardTypes" formControlName = "forexcardtype">
+                {{ forexcardType.forexCardName }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <button mat-button [disabled]="!isDisabled">Submit Details</button>
+        </form>
+
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+
+          <button mat-button (click)="stepper.reset()">Reset</button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </mat-step>
+</mat-stepper>
